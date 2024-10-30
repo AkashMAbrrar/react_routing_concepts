@@ -12,12 +12,14 @@ import Blogs from "./components/Blogs/Blogs.jsx";
 import UserDetails from "./components/UserDetails/UserDetails.jsx";
 import Posts from "./components/Posts/Posts.jsx";
 import PostDetails from "./components/PostDetails/PostDetails.jsx";
+import ErrorPage from "./components/ErrorPage/ErrorPage.jsx";
 //  define the routes by declare a variable
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home></Home>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/about",
