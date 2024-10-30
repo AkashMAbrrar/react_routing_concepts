@@ -1,0 +1,14 @@
+.blog_container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  align-items: center;
+}
+.blog {
+  width: 280px;
+  border: 2px solid blueviolet;
+  margin: 8px;
+  padding: 8px;
+  border-radius: 15px;
+  background-color: aquamarine;
+}

@@ -1,11 +1,15 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-
+import "./index.css";
+import App from "./App.jsx";
 // import react_router
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
+import Users from "./components/Users/Users.jsx";
+import Blogs from "./components/Blogs/Blogs.jsx";
+import UserDetails from "./components/UserDetails/UserDetails.jsx";
 //  define the routes by declare a variable
 
 const router = createBrowserRouter([
@@ -20,6 +24,21 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact></Contact>,
+      },
+      {
+        path: "/users",
+        loader: () => fetch("https://jsonplaceholder.typicode.com/users"),
+        element: <Users></Users>,
+      },
+      {
+        path: "/blogs",
+        element: <Blogs></Blogs>,
+      },
+      {
+        path: "/user/:userId",
+        loader: ({ params }) =>
+          fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`),
+        element: <UserDetails></UserDetails>,
       },
     ],
   },
